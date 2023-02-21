@@ -1,0 +1,26 @@
+name: My Starter Workflow
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+
+      - uses: action/checkout@v3
+
+      - name: Run a multi-linescript
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+  call-workflow-in-local-repo:
+    #strategy:
+    # matrix:
+    #  nodeversion: [14,16,18,20]
+    uses ./.github/workflows/reusable-workflow-1.yml
+  with:
+    # node: ${{ matrix.nodeversion }}
+      node: 8
