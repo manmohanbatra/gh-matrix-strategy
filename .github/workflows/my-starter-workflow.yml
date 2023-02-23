@@ -18,6 +18,7 @@ jobs:
           echo test, and deploy your project.
 
   call-workflow-in-local-repo:
+    runs-on: self-hosted
     strategy:
       matrix:
         nodeversion: [14,16,18,20]
