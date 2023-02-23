@@ -18,12 +18,10 @@ jobs:
           echo test, and deploy your project.
 
   call-workflow-in-local-repo:
-    runs-on: self-hosted
     strategy:
       matrix:
         nodeversion: [14,16,18,20]
-    steps:
-      - uses: ./.github/workflows/reusable-workflow-1.yml
-        with:
-          node: ${{ matrix.nodeversion }}
+    uses: ./.github/workflows/reusable-workflow-1.yml
+    with:
+      node: ${{ matrix.nodeversion }}
     #node: 8
