@@ -11,7 +11,6 @@ jobs:
   reusable_workflow_job:
     runs-on: self-hosted
     steps:
-      - name: Git Checkout
       - uses: actions/checkout@v3
         
       - name: Output the input value
